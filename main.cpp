@@ -1,8 +1,8 @@
 #ifdef _DEBUG
-//Debugƒ‚[ƒh‚Ìê‡
+//Debugãƒ¢ãƒ¼ãƒ‰ã®å ´åˆ
 #pragma comment(lib,"D:/home/Sources/opencv/opencv310/build/install/lib/opencv_world310d.lib")            // opencv_core
 #else
-//Releaseƒ‚[ƒh‚Ìê‡
+//Releaseãƒ¢ãƒ¼ãƒ‰ã®å ´åˆ
 #pragma comment(lib,"D:/home/Sources/opencv/opencv310/build/install/lib/opencv_world310.lib") 
 #endif
 
@@ -11,13 +11,13 @@
 #include <vector>
 #define _USE_MATH_DEFINES
 #include <math.h>
-/*OpenCVƒ‰ƒCƒuƒ‰ƒŠ*/
+/*OpenCVãƒ©ã‚¤ãƒ–ãƒ©ãƒª*/
 #include <opencv2/opencv.hpp>
-//Mat‚Æ‚©s—ñƒ‚ƒWƒ…[ƒ‹
+//Matã¨ã‹è¡Œåˆ—ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
 #include <opencv2/core/core.hpp>
-//GUIƒ‚ƒWƒ…[ƒ‹
+//GUIãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
 #include <opencv2/highgui/highgui.hpp>
-//ƒLƒƒƒŠƒuƒŒ[ƒVƒ‡ƒ“ƒ‚ƒWƒ…[ƒ‹
+//ã‚­ãƒ£ãƒªãƒ–ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«
 #include <opencv2/calib3d/calib3d.hpp>
 
 
