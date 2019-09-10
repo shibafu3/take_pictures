@@ -19,6 +19,7 @@
 #include <opencv2/highgui/highgui.hpp>
 //キャリブレーションモジュール
 #include <opencv2/calib3d/calib3d.hpp>
+#include "webcam.h"
 
 
 
@@ -38,6 +39,19 @@ int main() {
     cap1.set(CV_CAP_PROP_FRAME_WIDTH, 960);
     cap1.set(CV_CAP_PROP_FRAME_HEIGHT, 540);
 
+    if (c_init()) { cout << "Error : c_init():" << endl; return 1; }
+
+    CHandle handle = c_open_device ("video0");
+    if (!handle) { cout << "Error : c_open_device():\n"; c_cleanup (); return 2; }
+
+    CControlValue value;
+    if (c_get_control(handle, CControlId(CC_FOCUS_ABSOLUTE), &value)) { std::cout << "Error : c_get_control(): " << endl; }
+    cout << value.value << endl;
+
+    value.value = 0;
+    if (c_set_control(handle, CControlId(CC_AUTO_FOCUS), &value)) { std::cout << "Error : c_set_control(): " << endl; }
+    if (c_set_control(handle, CControlId(CC_FOCUS_ABSOLUTE), &value)) { std::cout << "Error : c_set_control(): " << endl; }
+
 
     char file_name[256];
     int itr = 0;
@@ -50,7 +64,11 @@ int main() {
             sprintf(file_name, "%d.jpg", itr++);
             imwrite(file_name, image1);
         }
+
+        if (waitKey(1) == 27) { break; }
     }
     cap1.release();
+    c_close_device (handle);
+    c_cleanup ();
     return 0;
 }
