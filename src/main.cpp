@@ -36,8 +36,8 @@ int main() {
 
     VideoCapture cap1(0);
     if (!cap1.isOpened()) { return -1; }
-    cap1.set(CV_CAP_PROP_FRAME_WIDTH, 960);
-    cap1.set(CV_CAP_PROP_FRAME_HEIGHT, 540);
+    cap1.set(CV_CAP_PROP_FRAME_WIDTH, 1280);
+    cap1.set(CV_CAP_PROP_FRAME_HEIGHT, 720);
 
     if (c_init()) { cout << "Error : c_init():" << endl; return 1; }
 
