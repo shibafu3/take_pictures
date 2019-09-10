@@ -47,7 +47,7 @@ int main() {
         imshow("image1", image1);
         if (waitKey(33) == 32) { // 32 = space key
             printf("%d.jpg\n", itr);
-            sprintf_s(file_name, "%d.jpg", itr++);
+            sprintf(file_name, "%d.jpg", itr++);
             imwrite(file_name, image1);
         }
     }
