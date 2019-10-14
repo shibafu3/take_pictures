@@ -1,12 +1,3 @@
-#ifdef _DEBUG
-//Debugモードの場合
-#pragma comment(lib,"D:/home/Sources/opencv/opencv310/build/install/lib/opencv_world310d.lib")            // opencv_core
-#else
-//Releaseモードの場合
-#pragma comment(lib,"D:/home/Sources/opencv/opencv310/build/install/lib/opencv_world310.lib") 
-#endif
-
-
 #include <iostream>
 #include <vector>
 #define _USE_MATH_DEFINES
